@@ -179,7 +179,7 @@ void RtlAssert(BOOL InAssert, LPCWSTR lpMessageText)
         return;
     }
 
-    LOG(FATAL) << lpMessageText;
+    //LOG(FATAL) << lpMessageText;
 }
 
 

@@ -2331,7 +2331,7 @@ LONG DetourTransactionCommitEx(_Out_opt_ PVOID **pppFailedPointer)
                 //error, handle this better
                 DETOUR_TRACE(("detours: TrampolineSize > DETOUR_TRAMPOLINE_CODE_SIZE (%08X != %08X)",
                     TrampolineSize, DETOUR_TRAMPOLINE_CODE_SIZE));
-                LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
+                //LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
             }
             PBYTE endOfTramp = (PBYTE)&o->pTrampoline->rbTrampolineCode;
             memcpy(endOfTramp, trampoline, TrampolineSize);
@@ -2356,7 +2356,7 @@ LONG DetourTransactionCommitEx(_Out_opt_ PVOID **pppFailedPointer)
                 //error, handle this better
                 DETOUR_TRACE(("detours: TrampolineSize > DETOUR_TRAMPOLINE_CODE_SIZE (%08X != %08X)",
                     TrampolineSize, DETOUR_TRAMPOLINE_CODE_SIZE));
-                LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
+                //LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
 
             }
             PBYTE endOfTramp = (PBYTE)&o->pTrampoline->rbTrampolineCode;
@@ -2398,7 +2398,7 @@ LONG DetourTransactionCommitEx(_Out_opt_ PVOID **pppFailedPointer)
                 //error, handle this better
                 DETOUR_TRACE(("detours: TrampolineSize > DETOUR_TRAMPOLINE_CODE_SIZE (%08X != %08X)",
                     TrampolineSize, DETOUR_TRAMPOLINE_CODE_SIZE));
-                LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
+                //LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
             }
 
             PBYTE endOfTramp = (PBYTE)&o->pTrampoline->rbTrampolineCode;
@@ -2443,7 +2443,7 @@ LONG DetourTransactionCommitEx(_Out_opt_ PVOID **pppFailedPointer)
                 //error, handle this better
                 DETOUR_TRACE(("detours: TrampolineSize > DETOUR_TRAMPOLINE_CODE_SIZE (%08X != %08X)", 
                     TrampolineSize, DETOUR_TRAMPOLINE_CODE_SIZE));
-                LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
+                //LOG(FATAL) << "Invalid trampoline size: " << TrampolineSize;
             }
             PBYTE endOfTramp = (PBYTE)&o->pTrampoline->rbTrampolineCode;
             memcpy(endOfTramp, trampolineStart, TrampolineSize);
@@ -2676,6 +2676,7 @@ LONG DetourUpdateThread(_In_ pthread_t hThread)
     return NO_ERROR;
 }
 
+/*
 const unsigned int max_print_buffer_size = 1024;
 
 char buffer_print[max_print_buffer_size];
@@ -2690,6 +2691,7 @@ const char* ___DETOUR_TRACE(const char *format, ...)
 
     return buffer_print;
 }
+*/
 ///////////////////////////////////////////////////////////// Transacted APIs.
 //
 LONG DetourAttach(_Inout_ PVOID *ppPointer,

@@ -45,6 +45,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <limits.h>
+#include <linux/limits.h>
 #include <sys/mman.h>
 #include <errno.h>
 #include <dlfcn.h>

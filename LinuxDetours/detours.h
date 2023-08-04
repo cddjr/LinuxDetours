@@ -626,6 +626,9 @@ LONG InterlockedCompareExchange(_Inout_ LONG *ptr, _In_ LONG nval, _In_ LONG ova
 #define _CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS 1
 
 #ifndef DETOUR_TRACE
+#define DETOUR_TRACE(x) ((void)0)
+#define DETOUR_BREAK() ((void)0)
+/*
 #if DETOUR_DEBUG
 #define DETOUR_TRACE(x) printf x
 #define DETOUR_BREAK()  __debugbreak()
@@ -638,6 +641,7 @@ const char * ___DETOUR_TRACE(const char *format, ...);
 #define DETOUR_TRACE(x) LOG(INFO) << ___DETOUR_TRACE x
 #define DETOUR_BREAK()
 #endif
+*/
 #endif
 
 #if 1 || defined(DETOURS_IA64)
