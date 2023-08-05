@@ -145,6 +145,9 @@ LONG RtlInterlockedIncrement(LONG* RefValue)
 
 BOOL RtlIsValidPointer(PVOID InPtr, ULONG InSize)
 {
+    if (!InSize)
+        return TRUE;
+
     if ((InPtr == NULL) || (InPtr == (PVOID)~0))
         return FALSE;
 
