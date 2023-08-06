@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.10)
 
 project(linuxDetours LANGUAGES CXX)
 
+if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_COMPILER clang++)
+endif()
+
 set(sources
     LinuxDetours/barrier.cpp
     LinuxDetours/detours.cpp
