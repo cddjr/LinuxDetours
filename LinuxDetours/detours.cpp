@@ -3290,7 +3290,7 @@ BOOL DetourVirtualProtectSameExecute(_In_  PVOID pAddress,
     return DetourVirtualProtectSameExecuteEx(getpid(),
                                            pAddress, nSize, dwNewProtect, pdwOldProtect);
 }
-void library_entry_point(void) __attribute__((constructor));
+void library_entry_point(void) __attribute__((constructor(101)));
 
 void library_entry_point()
 {
