@@ -36,6 +36,7 @@ void RtlInitializeLock(RTL_SPIN_LOCK* OutLock)
 
         //create mutex attribute variable
         pthread_mutexattr_t mAttr;
+        pthread_mutexattr_init(&mAttr);
 
         // setup recursive mutex for mutex attribute
         pthread_mutexattr_settype(&mAttr, PTHREAD_MUTEX_RECURSIVE);
